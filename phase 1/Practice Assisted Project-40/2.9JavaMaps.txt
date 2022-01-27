@@ -1,0 +1,56 @@
+package abc;
+
+	import java.util.HashMap;
+	import java.util.Map;
+	import java.util.Set;
+	import java.util.TreeMap;
+
+	public class JavaMaps 
+	{
+	  
+	  public static void main(String args[])
+	  {    
+	    System.out.println("Creating a dictionary as a HashMap");
+	    Map<String, String> dictionaryAsHashMap = createDictionaryAsHashMap();
+	    System.out.println("Printing the HashMap");
+	    retrieve(dictionaryAsHashMap);
+	    
+	    System.out.println("");
+	    
+	    System.out.println("Creating a dictionary as a TreeMap");
+	    Map<String, String> dictionaryAsTreeMap = createDictionaryAsTreeMap();
+	    System.out.println("Printing the HashMap");
+	    retrieve(dictionaryAsTreeMap);    
+	  }
+
+	  private static Map<String, String> createDictionaryAsHashMap() {
+	    Map<String, String> dictionary = new HashMap<String, String>();
+	    dictionary.put("geek", "A term used for people who have relationships with their computers");
+	    dictionary.put("nerd", "Someone who is more interested in Calculus than Cricket");
+	    dictionary.put("workaholic", "A person who spends unreasonable hours playing Solitaire on his/her computer");
+	    dictionary.put("HelloWorld", "A strange form of greeting used to explain elementary programming principles");
+	    return dictionary;
+	  }
+	  
+	  private static Map<String, String> createDictionaryAsTreeMap() {
+	    Map<String, String> dictionary = new TreeMap<String, String>();
+	    dictionary.put("geek", "A term used for people who have relationships with their computers");
+	    dictionary.put("nerd", "Someone who is more interested in Calculus than Cricket");
+	    dictionary.put("workaholic", "A person who spends unreasonable hours playing Solitaire on his/her computer");
+	    dictionary.put("HelloWorld", "A strange form of greeting used to explain elementary programming principles");
+	    return dictionary;
+	  }
+	  
+	  private static void retrieve(Map<String, String> dictionary) {               
+	    Set<String> keySet = dictionary.keySet();
+	    for(String key : keySet) {
+	      System.out.println(key + " : " + dictionary.get(key));
+	    }
+	    
+	    System.out.println("");
+	    System.out.println("The meaning of 'geek' is '" + dictionary.get("geek") + "'");
+	  }
+	  
+	}
+
+
